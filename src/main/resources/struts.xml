@@ -4,13 +4,12 @@
     "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
-
+  <include file="struts-default.xml"/>
   <constant name="struts.devMode" value="true" />
-
-  <package name="basicstruts2" extends="struts-default">
+  <constant name = "struts.ui.theme" value="bootstrap"/>
+  <package name="default" extends="struts-default">
     <action name="index">
       <result>/index.jsp</result>
     </action>
   </package>
-
 </struts>
