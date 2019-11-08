@@ -2,30 +2,31 @@ package com.pe902_gaming.FantasySettlementDataManager.model;
 
 public class SettlementDataStore
 {
-  private int Population;
+  private int AveragePopulation;
   private double final WealthyPopPercent = 0.02;
 
+  private String NationName;
   private String SettlementName;
 
   private SettlementDataStore(SettlementDataStoreBuilder builder)
   {
-    Population = builder.Population;
+    AveragePopulation = builder.AveragePopulation;
     SettlementName = builder.SettlementName;
   } // constructor SettlementDataStore
 
   public static class SettlementDataStoreBuilder
   {
     // required params
-    private int Population;
+    private int AveragePopulation;
     private String SettlementName;
 
     // optional params
     private int something;
     private String something_else;
 
-    public SettlementDataStoreBuilder(int ParamPopulation, String ParamSettlementName)
+    public SettlementDataStoreBuilder(int ParamAveragePopulation, String ParamSettlementName)
     {
-      Population = ParamPopulation;
+      AveragePopulation = ParamAveragePopulation;
       SettlementName = ParamSettlementName;
     } // builder pattern class constructor
 
