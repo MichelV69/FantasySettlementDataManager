@@ -1,6 +1,5 @@
-package com.pe902_gaming.FantasySettlementDataManager.model;
+package com.pe902_gaming.FantasySettlementDataManager;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 
 public class SettlementDataStore
