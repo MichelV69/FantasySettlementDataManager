@@ -2,7 +2,7 @@ package com.pe902_gaming.FantasySettlementDataManager;
 
 import java.util.ArrayList;
 
-public class SettlementDataStore
+public class TownData
 {
   final private double PopSummerPercent = 0.09;
   final private double PopWinterPercent = 1.10;
@@ -13,7 +13,7 @@ public class SettlementDataStore
   private String SettlementName;
   private int AveragePopulation;
 
-  private SettlementDataStore(SettlementDataStoreBuilder builder)
+  private TownData(BDPO builder)
   {
     AveragePopulation = builder.AveragePopulation;
     SettlementName = builder.SettlementName;
@@ -24,9 +24,9 @@ public class SettlementDataStore
     PopEconomicClassPercent.add( new String[]{ "Comfortable", "0.03" } );
     PopEconomicClassPercent.add( new String[]{ "Wealthy", "0.01" } );
     PopEconomicClassPercent.add( new String[]{ "Aristocratic", "0.005" } );
-  } // constructor SettlementDataStore
+  } // constructor TownData
 
-  public static class SettlementDataStoreBuilder
+  public static class BDPO
   {
     // required params
     private int AveragePopulation;
@@ -36,20 +36,20 @@ public class SettlementDataStore
     private int something;
     private String something_else;
 
-    public SettlementDataStoreBuilder(int ParamAveragePopulation, String ParamSettlementName)
+    public BDPO(int ParamAveragePopulation, String ParamSettlementName)
     {
       AveragePopulation = ParamAveragePopulation;
       SettlementName = ParamSettlementName;
     } // builder pattern class constructor
 
-    public SettlementDataStoreBuilder setSomething(int parmaSomething)
+    public BDPO setSomething(int parmaSomething)
     {
       something = parmaSomething;
       return this;
     }
 
-    public SettlementDataStore build(){
-      return new SettlementDataStore(this);
+    public TownData build(){
+      return new TownData(this);
     }
 
   } // builder pattern class
@@ -76,4 +76,4 @@ public class SettlementDataStore
   public String getSettlementName() { return SettlementName; }
   public void setSettlementName( String settlementName) { SettlementName = settlementName; }
 
-} // end class SettlementDataStore
+} // end class TownData

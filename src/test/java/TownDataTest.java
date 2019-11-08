@@ -1,16 +1,18 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import com.pe902_gaming.FantasySettlementDataManager.SettlementDataStore;
+import com.pe902_gaming.FantasySettlementDataManager.TownData;
 
 /**
- * Unit test for SettlementDataStoreTest.
+ * Unit test for TownDataTest.
  */
-public class SettlementDataStoreTest
+public class TownDataTest
 {
   final private String TestSettlementName =  "Testville";
   final private int TestSettlementPopulation =  1000;
-  private SettlementDataStore TestSettlement = new SettlementDataStore.SettlementDataStoreBuilder(TestSettlementPopulation, TestSettlementName).build();
+  private TownData TestSettlement = new TownData.BDPO(TestSettlementPopulation, TestSettlementName).build();
+
+  TownDataTest() {;}
 
   @Test
   @DisplayName("setTestSettlementName")
@@ -26,4 +28,4 @@ public class SettlementDataStoreTest
     int ShouldBe = 0;
     assertEquals(ShouldBe, TestSettlement.getSummerPopulation());
   }
-} // end class SettlementDataStoreTest
+} // end class TownDataTest
