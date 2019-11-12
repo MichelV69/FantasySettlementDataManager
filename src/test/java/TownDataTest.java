@@ -11,25 +11,31 @@ public class TownDataTest
 {
   private int TestSettlementPopulation;
   private String TestSettlementName;
+  private String TestNationName;
   private TownData TestSettlement;
 
   TownDataTest()
   {
+    TestNationName =  "TestNation";
     TestSettlementName =  "Testville";
     TestSettlementPopulation = 1000;
-    TestSettlement = new TownData.BDPO(TestSettlementPopulation, TestSettlementName).build();
+    TestSettlement = new TownData.BDPO(TestSettlementPopulation, TestSettlementName).setNationName(TestNationName).build();
   }
 
-  @DisplayName("setTestSettlementName")
+  @DisplayName("testBuilderNationName")
   @Test
-  public void setTestSettlementName()
+  public void testBuilderNationName()
   {
-    assertEquals(TestSettlementName, TestSettlement.getNationName());
+    assertEquals(TestNationName, TestSettlement.getNationName());
   }
 
-  @DisplayName("testPopulationPoor")
+  @DisplayName("testBuilderSettlementName")
   @Test
-  public void testPopulationPoor()
+  public void testBuilderSettlementName() { assertEquals(TestSettlementName, TestSettlement.getSettlementName()); }
+
+  @DisplayName("testGetPopulationPoor")
+  @Test
+  public void testGetPopulationPoor()
   {
     int ShouldBe = 0;
     assertEquals(ShouldBe, TestSettlement.getSummerPopulation());

@@ -24,6 +24,7 @@ public class TownData
 
     AveragePopulation = builder.AveragePopulation;
     SettlementName = builder.SettlementName;
+    NationName = builder.NationName;
   } // constructor TownData
 
   public static class BDPO
@@ -35,7 +36,7 @@ public class TownData
 
     // optional params
     private int something;
-    private String something_else;
+    private String NationName;
 
     public BDPO(int ParamAveragePopulation, String ParamSettlementName)
     {
@@ -46,6 +47,12 @@ public class TownData
     public BDPO setSomething(int parmaSomething)
     {
       something = parmaSomething;
+      return this;
+    }
+
+    public BDPO setNationName(String paramNationName)
+    {
+      NationName = paramNationName;
       return this;
     }
 
