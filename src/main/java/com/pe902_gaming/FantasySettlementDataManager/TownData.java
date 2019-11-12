@@ -7,7 +7,7 @@ public class TownData
   final private double PopSummerPercent = 0.09;
   final private double PopWinterPercent = 1.10;
 
-  private ArrayList<String[]> PopEconomicClassPercent;
+  private ArrayList<String[]> PopEconomicClassPercent = new ArrayList<>();
 
   private String NationName;
   private String SettlementName;
@@ -15,19 +15,20 @@ public class TownData
 
   private TownData(BDPO builder)
   {
-    AveragePopulation = builder.AveragePopulation;
-    SettlementName = builder.SettlementName;
-
     PopEconomicClassPercent.add( new String[]{ "Poor" , "0.52" } );
     PopEconomicClassPercent.add( new String[]{ "Modest", "0.30" } );
     PopEconomicClassPercent.add( new String[]{ "Young", "0.125" } );
     PopEconomicClassPercent.add( new String[]{ "Comfortable", "0.03" } );
     PopEconomicClassPercent.add( new String[]{ "Wealthy", "0.01" } );
     PopEconomicClassPercent.add( new String[]{ "Aristocratic", "0.005" } );
+
+    AveragePopulation = builder.AveragePopulation;
+    SettlementName = builder.SettlementName;
   } // constructor TownData
 
   public static class BDPO
   {
+    // BDPO => Builder Design Pattern Object
     // required params
     private int AveragePopulation;
     private String SettlementName;
