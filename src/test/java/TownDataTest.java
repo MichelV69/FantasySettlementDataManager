@@ -22,16 +22,15 @@ public class TownDataTest
     TestSettlement = new TownData.BDPO(TestSettlementPopulation, TestSettlementName).setNationName(TestNationName).build();
   }
 
-  @DisplayName("testBuilderNationName")
   @Test
+  @DisplayName("Get/Set Tests for Tombstone Data")
   public void testBuilderNationName() { assertEquals(TestNationName, TestSettlement.getNationName()); }
 
-  @DisplayName("testBuilderSettlementName")
   @Test
   public void testBuilderSettlementName() { assertEquals(TestSettlementName, TestSettlement.getSettlementName()); }
 
-  @DisplayName("testGetPopulationSummer")
   @Test
+  @DisplayName("Get/Set Tests for Seasonal Population Counts")
   public void testGetPopulationSummer()
   {
     int ShouldBe = 1080;
@@ -46,6 +45,7 @@ public class TownDataTest
   }
 
   @Test
+  @DisplayName("Get Tests for population by social status")
   public void testGetPopulationPoor()
   {
     int ShouldBe = 624;
@@ -88,6 +88,7 @@ public class TownDataTest
   }
 
   @Test
+  @DisplayName("Get Tests for income by social status")
   public void testGetIncomePoor()
   {
     int ShouldBe = 3744;
@@ -120,5 +121,14 @@ public class TownDataTest
   {
     int ShouldBe = 1800;
     assertEquals(ShouldBe, TestSettlement.getAristocraticIncomeGP());
+  }
+
+  @Test
+  @DisplayName("Get/Set Tests for ")
+  public void testSeasonalEconomicStatusSetToLow()
+  {
+    int ShouldBe = -2;
+    TestSettlement.setSeasonalEconomicStatus(-99);
+    assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatus());
   }
 } // end class TownDataTest

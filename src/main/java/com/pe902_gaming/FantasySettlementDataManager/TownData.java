@@ -12,6 +12,7 @@ public class TownData
   private String NationName;
   private String SettlementName;
   private int AveragePopulation;
+  private int SeasonalEconomicStatus;
 
   private TownData(BDPO builder)
   {
@@ -25,6 +26,7 @@ public class TownData
     AveragePopulation = builder.AveragePopulation;
     SettlementName = builder.SettlementName;
     NationName = builder.NationName;
+    SeasonalEconomicStatus = builder.SeasonalEconomicStatus;
   } // constructor TownData
 
   public static class BDPO
@@ -35,7 +37,7 @@ public class TownData
     private String SettlementName;
 
     // optional params
-    private int something;
+    private int SeasonalEconomicStatus;
     private String NationName;
 
     public BDPO(int ParamAveragePopulation, String ParamSettlementName)
@@ -44,9 +46,9 @@ public class TownData
       SettlementName = ParamSettlementName;
     } // builder pattern class constructor
 
-    public BDPO setSomething(int parmaSomething)
+    public BDPO setSeasonalEconomicStatus(int paramSeasonalEconomicStatus)
     {
-      something = parmaSomething;
+      SeasonalEconomicStatus = paramSeasonalEconomicStatus;
       return this;
     }
 
@@ -56,7 +58,8 @@ public class TownData
       return this;
     }
 
-    public TownData build(){
+    public TownData build()
+    {
       return new TownData(this);
     }
 
@@ -143,6 +146,16 @@ public class TownData
   {
     final int AristocraticIncomeFactorGP = 300;
     return getAristocraticPopulation() * AristocraticIncomeFactorGP;
+  }
+
+  public void setSeasonalEconomicStatus(int incomingSeasonalEconomicStatusValue)
+  {
+    SeasonalEconomicStatus = incomingSeasonalEconomicStatusValue;
+  }
+
+  public int getSeasonalEconomicStatus()
+  {
+    return SeasonalEconomicStatus;
   }
 
 } // end class TownData
