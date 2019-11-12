@@ -200,4 +200,29 @@ public class TownDataTest
     assertEquals(ShouldBe, TestSettlement.getWeeklyTreasureSoakGPValue());
   }
 
+  @DisplayName("Taxation Revenue for Strongholds")
+  @Test
+  public void testDefaultTaxRateSetByBuilder()
+  {
+    double ShouldBe = 10.0;
+    assertEquals(ShouldBe, TestSettlement.getCurrentTaxPercent());
+  }
+
+  @Test
+  public void testSetNewTaxRate()
+  {
+    double ShouldBe = 11.5;
+    TestSettlement.setCurrentTaxPercent(ShouldBe);
+    assertEquals(ShouldBe, TestSettlement.getCurrentTaxPercent());
+  }
+
+  @Test
+  public void testGetMonthlyTaxesGainedGP()
+  {
+    int ShouldBe = 2087;
+    TestSettlement.setSeasonalEconomicStatus(-1);
+    TestSettlement.setCurrentTaxPercent(11.25);
+    assertEquals(ShouldBe, TestSettlement.getMonthlyTaxesGainedGP());
+  }
+
 } // end class TownDataTest

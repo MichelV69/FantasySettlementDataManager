@@ -13,6 +13,7 @@ public class TownData
   private String SettlementName;
   private int AveragePopulation;
   private int SeasonalEconomicStatus;
+  private double CurrentTaxPercent;
 
   private TownData(BDPO builder)
   {
@@ -27,23 +28,26 @@ public class TownData
     SettlementName = builder.SettlementName;
     NationName = builder.NationName;
     SeasonalEconomicStatus = builder.SeasonalEconomicStatus;
+    CurrentTaxPercent = builder.CurrentTaxPercent;
   } // constructor TownData
 
   public static class BDPO
   {
     // BDPO => Builder Design Pattern Object
     // required params
-    private int AveragePopulation;
     private String SettlementName;
+    private int AveragePopulation;
 
     // optional params
-    private int SeasonalEconomicStatus;
     private String NationName;
+    private int SeasonalEconomicStatus;
+    private double CurrentTaxPercent;
 
     public BDPO(int ParamAveragePopulation, String ParamSettlementName)
     {
       AveragePopulation = ParamAveragePopulation;
       SettlementName = ParamSettlementName;
+      CurrentTaxPercent = 10.0;
     } // builder pattern class constructor
 
     public BDPO setSeasonalEconomicStatus(int paramSeasonalEconomicStatus)
@@ -55,6 +59,12 @@ public class TownData
     public BDPO setNationName(String paramNationName)
     {
       NationName = paramNationName;
+      return this;
+    }
+
+    public BDPO setCurrentTaxPercent(int paramCurrentTaxPercent)
+    {
+      CurrentTaxPercent = paramCurrentTaxPercent;
       return this;
     }
 
@@ -207,6 +217,15 @@ public class TownData
   {
     final double TreasureInfluxSoakFactor = 40.0;
     return (int)(Math.round ( getMonthlyEconomyGPValue() / TreasureInfluxSoakFactor ));
+  }
+
+  public void setCurrentTaxPercent(double newTaxPercent) { CurrentTaxPercent = newTaxPercent; }
+
+  public double getCurrentTaxPercent() { return CurrentTaxPercent; }
+
+  public int getMonthlyTaxesGainedGP()
+  {
+    return (int)(Math.round (  CurrentTaxPercent / 100.0 * getMonthlyEconomyGPValue() ));
   }
 
 } // end class TownData
