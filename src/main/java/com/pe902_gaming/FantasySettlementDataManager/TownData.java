@@ -6,6 +6,9 @@ public class TownData
 {
   final private double PopSummerPercent = 0.90;
   final private double PopWinterPercent = 1.10;
+  final private double HAFarmLandPerPerson = 0.35;
+  final private double HATownLandPerBuilding = 0.107136;
+  final private double PeoplePerBuildingAverage = 5.0;
 
   private ArrayList<String[]> PopEconomicClassPercent = new ArrayList<>();
 
@@ -226,6 +229,30 @@ public class TownData
   public int getMonthlyTaxesGainedGP()
   {
     return (int)(Math.round (  CurrentTaxPercent / 100.0 * getMonthlyEconomyGPValue() ));
+  }
+
+  public int getFarmlandHectares() { return (int)(Math.round (  AveragePopulation * HAFarmLandPerPerson)); }
+
+  public int getTownAreaHectares()
+  {
+    return (int)(Math.round (  getOldTownBuildingCount() * getNewTownBuildingCount() * HATownLandPerBuilding ));
+  }
+
+  public int getOldTownBuildingCount()
+  {
+    int OldTownAdultPop = getComfortablePopulation()+getWealthyPopulation()+getAristocraticPopulation();
+    OldTownAdultPop +=  (int)(Math.round (0.6 * getModestPopulation()));
+
+    int OldTownYouthCount = (int)(Math.round (OldTownAdultPop/AveragePopulation * getYoungPopulation() ));
+
+    int OldTownBuildingCount = (int)(Math.round (OldTownAdultPop + OldTownYouthCount) / PeoplePerBuildingAverage );
+
+    return OldTownBuildingCount;
+  }
+
+  public int getNewTownBuildingCount()
+  {
+    return (int)(Math.round ((AveragePopulation / PeoplePerBuildingAverage) - getOldTownBuildingCount()));
   }
 
 } // end class TownData

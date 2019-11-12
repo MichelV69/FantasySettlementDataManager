@@ -225,4 +225,20 @@ public class TownDataTest
     assertEquals(ShouldBe, TestSettlement.getMonthlyTaxesGainedGP());
   }
 
+  @DisplayName("Land Area Calculations")
+  @Test
+  public void testGetFarmlandHectares()
+  {
+    int ShouldBe = 420;
+    assertEquals(ShouldBe, TestSettlement.getFarmlandHectares());
+  }
+
+  @Test
+  public void testGetTownAreaHectares()
+  {
+    int ShouldBe = 26;
+    assertEquals(ShouldBe, TestSettlement.getTownAreaHectares());
+  }
+
+
 } // end class TownDataTest
