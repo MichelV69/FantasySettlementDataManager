@@ -22,15 +22,15 @@ public class TownDataTest
     TestSettlement = new TownData.BDPO(TestSettlementPopulation, TestSettlementName).setNationName(TestNationName).build();
   }
 
-  @Test
   @DisplayName("Get/Set Tests for Tombstone Data")
+  @Test
   public void testBuilderNationName() { assertEquals(TestNationName, TestSettlement.getNationName()); }
 
   @Test
   public void testBuilderSettlementName() { assertEquals(TestSettlementName, TestSettlement.getSettlementName()); }
 
-  @Test
   @DisplayName("Get/Set Tests for Seasonal Population Counts")
+  @Test
   public void testGetPopulationSummer()
   {
     int ShouldBe = 1080;
@@ -44,8 +44,8 @@ public class TownDataTest
     assertEquals(ShouldBe, TestSettlement.getWinterPopulation());
   }
 
-  @Test
   @DisplayName("Get Tests for population by social status")
+  @Test
   public void testGetPopulationPoor()
   {
     int ShouldBe = 624;
@@ -87,8 +87,8 @@ public class TownDataTest
     assertEquals(ShouldBe, TestSettlement.getYoungPopulation());
   }
 
-  @Test
   @DisplayName("Get Tests for income by social status")
+  @Test
   public void testGetIncomePoor()
   {
     int ShouldBe = 3744;
@@ -123,12 +123,81 @@ public class TownDataTest
     assertEquals(ShouldBe, TestSettlement.getAristocraticIncomeGP());
   }
 
+  @DisplayName("Goldilocks Tests for SeasonalEconomicStatus")
   @Test
-  @DisplayName("Get/Set Tests for ")
   public void testSeasonalEconomicStatusSetToLow()
   {
     int ShouldBe = -2;
     TestSettlement.setSeasonalEconomicStatus(-99);
     assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatus());
   }
+
+  @Test
+  public void testSeasonalEconomicStatusSetToHigh()
+  {
+    int ShouldBe = 2;
+    TestSettlement.setSeasonalEconomicStatus(99);
+    assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatus());
+  }
+
+  @Test
+  public void testSeasonalEconomicStatusSetJustRight()
+  {
+    int ShouldBe = 1;
+    TestSettlement.setSeasonalEconomicStatus(ShouldBe);
+    assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatus());
+  }
+
+  @DisplayName("get SeasonalEconomicStatus word")
+  @Test
+  public void testSeasonalEconomicStatusGetText()
+  {
+    String ShouldBe = "Bust";
+    TestSettlement.setSeasonalEconomicStatus(-2);
+    assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatusText());
+
+    ShouldBe = "Slow";
+    TestSettlement.setSeasonalEconomicStatus(-1);
+    assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatusText());
+
+    ShouldBe = "Average";
+    TestSettlement.setSeasonalEconomicStatus(0);
+    assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatusText());
+
+    ShouldBe = "Busy";
+    TestSettlement.setSeasonalEconomicStatus(1);
+    assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatusText());
+
+    ShouldBe = "Booming";
+    TestSettlement.setSeasonalEconomicStatus(2);
+    assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatusText());
+  }
+
+  @DisplayName("get SeasonalEconomicStatus effect")
+  @Test
+  public void testSeasonalEconomicStatusGetEffectGP()
+  {
+    int ShouldBe = -1396;
+    TestSettlement.setSeasonalEconomicStatus(-1);
+    assertEquals(ShouldBe, TestSettlement.getSeasonalEconomicStatusEffectGP());
+  }
+
+  @DisplayName("get MonthlyEconomyGPValue")
+  @Test
+  public void testMonthlyEconomyGPValue()
+  {
+    int ShouldBe = 18548;
+    TestSettlement.setSeasonalEconomicStatus(-1);
+    assertEquals(ShouldBe, TestSettlement.getMonthlyEconomyGPValue());
+  }
+
+  @DisplayName("get WeeklyTreasureSoakGPValue")
+  @Test
+  public void testWeeklyTreasureSoakGPValue()
+  {
+    int ShouldBe = 464;
+    TestSettlement.setSeasonalEconomicStatus(-1);
+    assertEquals(ShouldBe, TestSettlement.getWeeklyTreasureSoakGPValue());
+  }
+
 } // end class TownDataTest

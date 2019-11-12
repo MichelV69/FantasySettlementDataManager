@@ -151,11 +151,62 @@ public class TownData
   public void setSeasonalEconomicStatus(int incomingSeasonalEconomicStatusValue)
   {
     SeasonalEconomicStatus = incomingSeasonalEconomicStatusValue;
+    if ( SeasonalEconomicStatus < -2 )
+      SeasonalEconomicStatus = -2;
+    if ( SeasonalEconomicStatus > 2 )
+      SeasonalEconomicStatus = 2;
   }
 
   public int getSeasonalEconomicStatus()
   {
     return SeasonalEconomicStatus;
+  }
+
+  public String getSeasonalEconomicStatusText()
+  {
+    String StatusText = "";
+    switch (SeasonalEconomicStatus)
+    {
+      case -2:
+        StatusText = "Bust";
+        break;
+      case -1:
+        StatusText = "Slow";
+        break;
+      case 0:
+        StatusText = "Average";
+        break;
+      case 1:
+        StatusText = "Busy";
+        break;
+      case 2:
+        StatusText = "Booming";
+        break;
+      default:
+        throw new IllegalStateException("Unexpected value: " + SeasonalEconomicStatus);
+    } // end switch
+
+    return StatusText;
+  }
+
+  private int getRawEconomicOutput()
+  {
+    return getPoorIncomeGP() + getModestIncomeGP() + getComfortableIncomeGP()
+        + getWealthyIncomeGP() + getAristocraticIncomeGP();
+  }
+
+  public int getSeasonalEconomicStatusEffectGP()
+  {
+    final double EconomicImpactFactor = 0.07;
+    return (int)(Math.round (SeasonalEconomicStatus * EconomicImpactFactor * getRawEconomicOutput()));
+  }
+
+  public int getMonthlyEconomyGPValue() { return getRawEconomicOutput() + getSeasonalEconomicStatusEffectGP(); }
+
+  public int getWeeklyTreasureSoakGPValue()
+  {
+    final double TreasureInfluxSoakFactor = 40.0;
+    return (int)(Math.round ( getMonthlyEconomyGPValue() / TreasureInfluxSoakFactor ));
   }
 
 } // end class TownData
