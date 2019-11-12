@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class TownData
 {
-  final private double PopSummerPercent = 0.09;
+  final private double PopSummerPercent = 0.90;
   final private double PopWinterPercent = 1.10;
 
   private ArrayList<String[]> PopEconomicClassPercent = new ArrayList<>();
