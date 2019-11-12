@@ -52,4 +52,10 @@ public class TownDataTest
     assertEquals(ShouldBe, TestSettlement.getPoorPopulation());
   }
 
+  @Test
+  public void testGetPopulationModest()
+  {
+    int ShouldBe = 360;
+    assertEquals(ShouldBe, TestSettlement.getModestPopulation());
+  }
 } // end class TownDataTest

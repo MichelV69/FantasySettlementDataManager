@@ -72,7 +72,7 @@ public class TownData
     double ClassPopPercent = 0.00;
     for ( String[] DataStringArray : PopEconomicClassPercent )
     {
-      System.out.println(">> Debug: DataStringArray ["+DataStringArray[0]+"]");
+      // TODO - REMOVE : System.out.println(">> Debug: DataStringArray ["+DataStringArray[0]+"]");
       if (DataStringArray[0].toLowerCase().equals(ClassDescription.toLowerCase()))
         ClassPopPercent = Double.parseDouble(DataStringArray[1]);
     }
@@ -90,4 +90,8 @@ public class TownData
     return (int)(Math.round ( AveragePopulation * getPopEconomicClassPercent("poor")));
   }
 
+  public int getModestPopulation()
+  {
+    return (int)(Math.round ( AveragePopulation * getPopEconomicClassPercent("Modest")));
+  }
 } // end class TownData
