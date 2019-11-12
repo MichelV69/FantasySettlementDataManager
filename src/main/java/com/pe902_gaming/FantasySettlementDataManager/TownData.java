@@ -94,4 +94,55 @@ public class TownData
   {
     return (int)(Math.round ( AveragePopulation * getPopEconomicClassPercent("Modest")));
   }
+
+  public int getComfortablePopulation()
+  {
+    return (int)(Math.round ( AveragePopulation * getPopEconomicClassPercent("Comfortable")));
+  }
+
+  public int getWealthyPopulation()
+  {
+    return (int)(Math.round ( AveragePopulation * getPopEconomicClassPercent("Wealthy")));
+  }
+
+  public int getAristocraticPopulation()
+  {
+    return (int)(Math.round ( AveragePopulation * getPopEconomicClassPercent("Aristocratic")));
+  }
+
+  public int getYoungPopulation()
+  {
+    return (int)(Math.round ( AveragePopulation * getPopEconomicClassPercent("Young")));
+  }
+
+  public int getPoorIncomeGP()
+  {
+    final int PoorIncomeFactorGP = 6;
+    return getPoorPopulation() * PoorIncomeFactorGP;
+  }
+
+  public int getModestIncomeGP()
+  {
+    final int ModestIncomeFactorGP = 30;
+    return getModestPopulation() * ModestIncomeFactorGP;
+  }
+
+  public int getComfortableIncomeGP()
+  {
+    final int ComfortableIncomeFactorGP = 60;
+    return getComfortablePopulation() * ComfortableIncomeFactorGP;
+  }
+
+  public int getWealthyIncomeGP()
+  {
+    final int WealthyIncomeFactorGP = 120;
+    return getWealthyPopulation() * WealthyIncomeFactorGP;
+  }
+
+  public int getAristocraticIncomeGP()
+  {
+    final int AristocraticIncomeFactorGP = 300;
+    return getAristocraticPopulation() * AristocraticIncomeFactorGP;
+  }
+
 } // end class TownData
