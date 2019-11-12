@@ -16,9 +16,9 @@ public class TownDataTest
 
   TownDataTest()
   {
-    TestNationName =  "TestNation";
-    TestSettlementName =  "Testville";
-    TestSettlementPopulation = 1000;
+    TestNationName =  "Progress Confederacy";
+    TestSettlementName =  "Breezy Point Bay";
+    TestSettlementPopulation = 1200;
     TestSettlement = new TownData.BDPO(TestSettlementPopulation, TestSettlementName).setNationName(TestNationName).build();
   }
 
@@ -33,11 +33,11 @@ public class TownDataTest
   @Test
   public void testBuilderSettlementName() { assertEquals(TestSettlementName, TestSettlement.getSettlementName()); }
 
-  @DisplayName("testGetPopulationPoor")
+  @DisplayName("testGetPopulationSummer")
   @Test
-  public void testGetPopulationPoor()
+  public void testGetPopulationSummer()
   {
-    int ShouldBe = 0;
+    int ShouldBe = 1080;
     assertEquals(ShouldBe, TestSettlement.getSummerPopulation());
   }
 } // end class TownDataTest
