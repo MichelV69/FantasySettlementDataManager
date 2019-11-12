@@ -67,15 +67,16 @@ public class TownData
   public int getSummerPopulation() { return (int)(Math.round ( AveragePopulation * PopSummerPercent )); }
   public int getWinterPopulation() { return (int)(Math.round ( AveragePopulation * PopWinterPercent )); }
 
-  public int getPopEconomicClassPercent( String ClassDescription )
+  private double getPopEconomicClassPercent( String ClassDescription )
   {
     double ClassPopPercent = 0.00;
     for ( String[] DataStringArray : PopEconomicClassPercent )
     {
-      if ( DataStringArray[0].toLowerCase() == ClassDescription.toLowerCase() )
+      System.out.println(">> Debug: DataStringArray ["+DataStringArray[0]+"]");
+      if (DataStringArray[0].toLowerCase().equals(ClassDescription.toLowerCase()))
         ClassPopPercent = Double.parseDouble(DataStringArray[1]);
     }
-    return (int)(Math.round ( AveragePopulation * ClassPopPercent ));
+    return ClassPopPercent;
   } // end getPopEconomicClassPercent
 
   public String getNationName() { return NationName; }
@@ -83,5 +84,10 @@ public class TownData
 
   public String getSettlementName() { return SettlementName; }
   public void setSettlementName( String settlementName) { SettlementName = settlementName; }
+
+  public int getPoorPopulation()
+  {
+    return (int)(Math.round ( AveragePopulation * getPopEconomicClassPercent("poor")));
+  }
 
 } // end class TownData

@@ -24,10 +24,7 @@ public class TownDataTest
 
   @DisplayName("testBuilderNationName")
   @Test
-  public void testBuilderNationName()
-  {
-    assertEquals(TestNationName, TestSettlement.getNationName());
-  }
+  public void testBuilderNationName() { assertEquals(TestNationName, TestSettlement.getNationName()); }
 
   @DisplayName("testBuilderSettlementName")
   @Test
@@ -40,4 +37,19 @@ public class TownDataTest
     int ShouldBe = 1080;
     assertEquals(ShouldBe, TestSettlement.getSummerPopulation());
   }
+
+  @Test
+  public void testGetPopulationWinter()
+  {
+    int ShouldBe = 1320;
+    assertEquals(ShouldBe, TestSettlement.getWinterPopulation());
+  }
+
+  @Test
+  public void testGetPopulationPoor()
+  {
+    int ShouldBe = 624;
+    assertEquals(ShouldBe, TestSettlement.getPoorPopulation());
+  }
+
 } // end class TownDataTest
