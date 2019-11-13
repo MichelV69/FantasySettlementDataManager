@@ -26,7 +26,7 @@ public class ActionsController extends ActionSupport
   }
   public void setCurrentTaxPercent(String newCurrentTaxPercent)
   {
-    ThisTownData.setCurrentTaxPercent(Integer.parseInt(newCurrentTaxPercent));
+    ThisTownData.setCurrentTaxPercent(Double.parseDouble(newCurrentTaxPercent));
   }
 
 } // end class ActionsController
