@@ -240,5 +240,38 @@ public class TownDataTest
     assertEquals(ShouldBe, TestSettlement.getTownAreaHectares());
   }
 
+  @Test
+  public void testGetTownRadiusMetres()
+  {
+    int ShouldBe = 288;
+    assertEquals(ShouldBe, TestSettlement.getTownRadiusMetres());
+  }
 
+  @Test
+  public void testGetMapHeightMetres()
+  {
+    int ShouldBe = 691;
+    assertEquals(ShouldBe, TestSettlement.getMapHeightMetres());
+  }
+
+  @Test
+  public void testGetMapWidthMetres()
+  {
+    int ShouldBe = 894;
+    assertEquals(ShouldBe, TestSettlement.getMapWidthMetres());
+  }
+
+  @Test
+  public void testGetWallOldTownRadiusMetres()
+  {
+    int ShouldBe = 115;
+    assertEquals(ShouldBe, TestSettlement.getWallOldTownRadiusMetres());
+  }
+
+  @Test
+  public void testGetWallNewTownRadiusMetres()
+  {
+    int ShouldBe = 230;
+    assertEquals(ShouldBe, TestSettlement.getWallNewTownRadiusMetres());
+  }
 } // end class TownDataTest

@@ -255,4 +255,35 @@ public class TownData
     return (int)(Math.round ((AveragePopulation / PeoplePerBuildingAverage) - getOldTownBuildingCount()));
   }
 
+  public int getTownRadiusMetres()
+  {
+    final int SqMperHA = 10000;
+    return (int)(Math.round (Math.sqrt (getTownAreaHectares() * SqMperHA / Math.PI)));
+  }
+
+  public int getMapHeightMetres()
+  {
+    final double RadiusToDiameter = 2.0;
+    final double MarginPadding = 1.2;
+    return (int)(Math.round (getTownRadiusMetres() * RadiusToDiameter * MarginPadding));
+  }
+
+  public int getMapWidthMetres()
+  {
+    final double PageFormat = 11.0/8.5;
+    return (int)(Math.round (getMapHeightMetres() * PageFormat));
+  }
+
+  public int getWallOldTownRadiusMetres()
+  {
+    final double OldTownWallRadiusFactor = 0.4;
+    return (int)(Math.round (getTownRadiusMetres() * OldTownWallRadiusFactor));
+  }
+
+  public int getWallNewTownRadiusMetres()
+  {
+    final double NewTownWallRadiusFactor = 2.0;
+    return (int)(Math.round (getWallOldTownRadiusMetres() * NewTownWallRadiusFactor));
+  }
+
 } // end class TownData
