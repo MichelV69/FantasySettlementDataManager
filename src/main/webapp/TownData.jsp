@@ -21,53 +21,242 @@
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Settlement Info</h5>
-        <h6 class="card-subtitle mb-2 text-muted"><s:property value="ThisTownData.SettlementName" />, <s:property value="ThisTownData.NationName" /></h6>
+        <h4 class="card-title">Settlement Info</h4>
+        <h5 class="card-subtitle mb-2 text-muted"><s:property value="ThisTownData.SettlementName" />, <s:property value="ThisTownData.NationName" /></h5>
         <!--- --->
-        <div class="row">
-          <div class="col-md">
+        <div class="row justify-content-center">
+          <div class="col-md-3">
             AveragePopulation
           </div>
-          <div class="col-md">
-            <s:property value="ThisTownData.AveragePopulation" />
+          <div class="col-md-2">
+            <s:property value="ThisTownData.AveragePopulation" /> people
           </div>
         </div>
         <!--- --->
-        <div class="row">
-          <div class="col-md">
+        <div class="row justify-content-center">
+          <div class="col-md-3">
             SeasonalEconomicStatus
           </div>
-          <div class="col-md">
+          <div class="col-md-2">
             <s:property value="ThisTownData.SeasonalEconomicStatusText" />
           </div>
         </div>
         <!--- --->
-        <div class="row">
-          <div class="col-md">
+        <div class="row justify-content-center">
+          <div class="col-md-3">
             CurrentTaxPercent
           </div>
-          <div class="col-md">
-            <s:property value="ThisTownData.CurrentTaxPercent" />
+          <div class="col-md-2">
+            <s:property value="ThisTownData.CurrentTaxPercent" />%
           </div>
         </div>
         <!--- --->
         <hr />
+        <h6 class="card-subtitle mb-2 text-muted">
+          Population Shifts By Season
+        </h6>
         <!--- --->
-        <div class="row">
-          <div class="col-md">
-            SummerPopulation
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Summer
           </div>
-          <div class="col-md">
-            <s:property value="ThisTownData.SummerPopulation" />
+          <div class="col-md-2">
+            <s:property value="ThisTownData.SummerPopulation" /> people
           </div>
         </div>
         <!--- --->
-        <div class="row">
-          <div class="col-md">
-            WinterPopulation
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Winter
           </div>
-          <div class="col-md">
-            <s:property value="ThisTownData.WinterPopulation" />
+          <div class="col-md-2">
+            <s:property value="ThisTownData.WinterPopulation" /> people
+          </div>
+        </div>
+        <!--- --->
+        <hr />
+        <h6 class="card-subtitle mb-2 text-muted">
+          Economic Input By Social Status
+        </h6>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Aristocratic <br />
+            (<s:property value="ThisTownData.AristocraticIncomeGP" /> GP/month)
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.AristocraticPopulation" /> people
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Wealthy  <br />
+            (<s:property value="ThisTownData.WealthyIncomeGP" /> GP/month)
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.WealthyPopulation" />people
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Comfortable <br />
+            (<s:property value="ThisTownData.ComfortableIncomeGP" /> GP/month)
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.ComfortablePopulation" />
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Modest <br />
+            (<s:property value="ThisTownData.ModestIncomeGP" /> GP/month)
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.ModestPopulation" />
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Poor <br />
+            (<s:property value="ThisTownData.PoorIncomeGP" /> GP/month)
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.PoorPopulation" />
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Youth
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.YoungPopulation" />
+          </div>
+        </div>
+        <!--- --->
+        <hr />
+        <h6 class="card-subtitle mb-2 text-muted">
+          Economic Output & Capacity
+        </h6>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Economic Trade Volume
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.MonthlyEconomyGPValue" /> GP/month
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Treasure Purchase Capacity
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.WeeklyTreasureSoakGPValue" /> GP/week
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Taxes Levied<br />(Stronghold & Followers)
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.MonthlyTaxesGainedGP" /> GP/month
+          </div>
+        </div>
+        <!--- --->
+        <hr />
+        <h6 class="card-subtitle mb-2 text-muted">
+          Geography
+        </h6>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Area of Town Proper
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.TownAreaHectares" /> Hectares
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Minimum Area of Supporting Farmland
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.FarmlandHectares" /> Hectares
+          </div>
+        </div>
+        <!--- --->
+        <hr />
+        <h6 class="card-subtitle mb-2 text-muted">
+          Cartography
+        </h6>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Approximate Map Dimensions
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.MapHeightMetres" /> Metres x <br />
+            <s:property value="ThisTownData.MapWidthMetres" /> Metres
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Approximate Town Radius
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.TownRadiusMetres" /> Metres
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            "Old Town"
+          </div>
+          <div class="col-md-2">
+            ~<s:property value="ThisTownData.WallOldTownRadiusMetres" /> Metre Radius, <br />
+            ~<s:property value="ThisTownData.OldTownBuildingCount" /> buildings
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            "New Town"
+          </div>
+          <div class="col-md-2">
+            ~<s:property value="ThisTownData.WallNewTownRadiusMetres" /> Metre Radius, <br />
+            ~<s:property value="ThisTownData.NewTownBuildingCount" /> buildings
+          </div>
+        </div>
+        <!--- --->
+        <hr />
+        <h6 class="card-subtitle mb-2 text-muted">
+          Civil Security & Military
+        </h6>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Volunteer Militia and / or Professional Soldiers
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.TownMilitiaHeadCount" /> people
+          </div>
+        </div>
+        <!--- --->
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            Volunteer Constables and / or Professional Guards
+          </div>
+          <div class="col-md-2">
+            <s:property value="ThisTownData.TownGuardHeadCount" /> people
           </div>
         </div>
         <!--- --->
