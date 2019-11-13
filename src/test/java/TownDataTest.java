@@ -2,7 +2,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.pe902_gaming.FantasySettlementDataManager.TownData;
+import com.pe902_gaming.FantasySettlementDataManager.model.TownData;
 
 /**
  * Unit test for TownDataTest.

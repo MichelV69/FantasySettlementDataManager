@@ -11,5 +11,8 @@
     <action name="index">
       <result>/index.jsp</result>
     </action>
+    <action name="TownData" class="com.pe902_gaming.FantasySettlementDataManager.action" method="execute">
+      <result name="success">/TownData.jsp</result>
+    </action
   </package>
 </struts>
