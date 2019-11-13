@@ -235,7 +235,7 @@ public class TownData
 
   public int getTownAreaHectares()
   {
-    return (int)(Math.round (  getOldTownBuildingCount() * getNewTownBuildingCount() * HATownLandPerBuilding ));
+    return (int)(Math.round ((getOldTownBuildingCount() + getNewTownBuildingCount()) * HATownLandPerBuilding ));
   }
 
   public int getOldTownBuildingCount()
