@@ -286,4 +286,16 @@ public class TownData
     return (int)(Math.round (getWallOldTownRadiusMetres() * NewTownWallRadiusFactor));
   }
 
+  public int getTownGuardHeadCount()
+  {
+    final double TownGuardPopFactor = 0.02;
+    return (int)(Math.round (AveragePopulation * TownGuardPopFactor));
+  }
+
+  public int getTownMilitiaHeadCount()
+  {
+    final double TownMilitiaPopFactor = 0.01;
+    return (int)(Math.round (AveragePopulation * TownMilitiaPopFactor));
+  }
+
 } // end class TownData

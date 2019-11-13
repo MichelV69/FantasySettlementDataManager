@@ -274,4 +274,18 @@ public class TownDataTest
     int ShouldBe = 230;
     assertEquals(ShouldBe, TestSettlement.getWallNewTownRadiusMetres());
   }
+
+  @Test
+  public void testTownGuardHeadCount()
+  {
+    int ShouldBe = 24;
+    assertEquals(ShouldBe, TestSettlement.getTownGuardHeadCount());
+  }
+
+  @Test
+  public void testTownMilitiaHeadCount()
+  {
+    int ShouldBe = 12;
+    assertEquals(ShouldBe, TestSettlement.getTownMilitiaHeadCount());
+  }
 } // end class TownDataTest
