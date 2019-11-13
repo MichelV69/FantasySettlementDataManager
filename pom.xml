@@ -13,6 +13,7 @@
     <name>902PE-Gaming</name>
     <url>https://www.wolfstar.ca/</url>
   </organization>
+
   <developers>
     <developer>
       <id>MRV</id>
@@ -68,12 +69,14 @@
       <version>2.12.1</version>
     </dependency>
   </dependencies>
+
   <properties>                                                                 
     <maven.compiler.source>1.8</maven.compiler.source>                         
     <maven.compiler.target>1.8</maven.compiler.target>                         
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>         
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding> 
-  </properties>  
+  </properties>
+
   <build>
     <finalName>FantasySettlementDataManager</finalName>
     <plugins>
@@ -97,4 +100,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>

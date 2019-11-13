@@ -1,4 +1,4 @@
-package com.pe902_gaming.FantasySettlementDataManager.model;
+package com.pe902_gaming.FantasySettlementDataManager.Model;
 
 import java.util.ArrayList;
 
