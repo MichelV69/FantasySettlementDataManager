@@ -8,6 +8,9 @@
   <constant name="struts.devMode" value="true" />
   <constant name = "struts.ui.theme" value="bootstrap"/>
   <package name="com.pe902_gaming.FantasySettlementDataManager" extends="struts-default">
+    <action name="">
+      <result>/index.jsp</result>
+    </action>
     <action name="index">
       <result>/index.jsp</result>
     </action>
