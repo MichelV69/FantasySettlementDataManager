@@ -268,7 +268,8 @@
       </div>
     </div>
 
-
+  <s:url action="index" var="indexURL" />
+  <s:a href="%{indexURL}" cssClass = "btn btn-secondary" cssRole = "button" > New Settlement </s:a>
 
   </div>
   <!-- Optional JavaScript -->
