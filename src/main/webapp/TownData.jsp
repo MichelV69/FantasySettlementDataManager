@@ -5,7 +5,7 @@
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <html>
   <head>
-    <title>Fantasy Settlement Data Manager (<s:property value="ThisTownData.SettlementName" />)</title>
+    <title> <s:text name="app.title.long" /> (<s:property value="ThisTownData.SettlementName" />)</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,26 +29,26 @@
         </h5>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            AveragePopulation
+          <div class="col-md-4">
+            <div class="text-right"><s:text name="AveragePopulation.label" /></div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.AveragePopulation" /> people
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.AveragePopulation})" /> people
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            SeasonalEconomicStatus
+          <div class="col-md-4">
+            <div class="text-right"><s:text name="SeasonalEconomicStatus.label" /></div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.SeasonalEconomicStatusText" />
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.SeasonalEconomicStatusText})" />
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            CurrentTaxPercent
+          <div class="col-md-4">
+            <div class="text-right"><s:text name="CurrentTaxPercent.label" /></div>
           </div>
           <div class="col-md-2">
             <s:property value="ThisTownData.CurrentTaxPercent" />%
@@ -61,20 +61,20 @@
         </h6>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Summer
+          <div class="col-md-4">
+            <div class="text-right">Summer</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.SummerPopulation" /> people
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.SummerPopulation})" /> people
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Winter
+          <div class="col-md-4">
+            <div class="text-right">Winter</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.WinterPopulation" /> people
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.WinterPopulation})" /> people
           </div>
         </div>
         <!--- --->
@@ -84,61 +84,61 @@
         </h6>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Aristocratic <br />
-            (<s:property value="ThisTownData.AristocraticIncomeGP" /> GP/month)
+          <div class="col-md-4">
+            <p class="text-right"> Aristocratic <br />
+            (<s:property value="getText('{0,number,#,##0}',{ThisTownData.AristocraticIncomeGP})" /> GP/month)</p>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.AristocraticPopulation" /> people
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.AristocraticPopulation})" /> people
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Wealthy  <br />
-            (<s:property value="ThisTownData.WealthyIncomeGP" /> GP/month)
+          <div class="col-md-4">
+            <p class="text-right"> Wealthy  <br />
+              (<s:property value="getText('{0,number,#,##0}',{ThisTownData.WealthyIncomeGP})" /> GP/month)</p>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.WealthyPopulation" />people
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.WealthyPopulation})" /> people
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Comfortable <br />
-            (<s:property value="ThisTownData.ComfortableIncomeGP" /> GP/month)
+          <div class="col-md-4">
+            <p class="text-right"> Comfortable <br />
+              (<s:property value="getText('{0,number,#,##0}',{ThisTownData.ComfortableIncomeGP})" /> GP/month)</p>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.ComfortablePopulation" />
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.ComfortablePopulation})" /> people
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Modest <br />
-            (<s:property value="ThisTownData.ModestIncomeGP" /> GP/month)
+          <div class="col-md-4">
+            <p class="text-right"> Modest <br />
+              (<s:property value="getText('{0,number,#,##0}',{ThisTownData.ModestIncomeGP})" /> GP/month)</p>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.ModestPopulation" />
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.ModestPopulation})" /> people
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Poor <br />
-            (<s:property value="ThisTownData.PoorIncomeGP" /> GP/month)
+          <div class="col-md-4">
+            <p class="text-right"> Poor <br />
+              (<s:property value="getText('{0,number,#,##0}',{ThisTownData.PoorIncomeGP})" /> GP/month) </p>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.PoorPopulation" />
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.PoorPopulation})" /> people
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Youth
+          <div class="col-md-4">
+            <p class="text-right">Youth </p>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.YoungPopulation" />
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.YoungPopulation})" /> people
           </div>
         </div>
         <!--- --->
@@ -148,29 +148,29 @@
         </h6>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Economic Trade Volume
+          <div class="col-md-4">
+            <div class="text-right">Economic Trade Volume</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.MonthlyEconomyGPValue" /> GP/month
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.MonthlyEconomyGPValue})" /> GP/month
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Treasure Purchase Capacity
+          <div class="col-md-4">
+            <div class="text-right">Treasure Purchase Capacity</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.WeeklyTreasureSoakGPValue" /> GP/week
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.WeeklyTreasureSoakGPValue})" /> GP/week
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Taxes Levied<br />(Stronghold & Followers)
+          <div class="col-md-4">
+            <div class="text-right">Taxes Levied<br />(Stronghold & Followers) </div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.MonthlyTaxesGainedGP" /> GP/month
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.MonthlyTaxesGainedGP})" /> GP/month
           </div>
         </div>
         <!--- --->
@@ -180,20 +180,20 @@
         </h6>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Area of Town Proper
+          <div class="col-md-4">
+            <div class="text-right">Area of Town Proper</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.TownAreaHectares" /> Hectares
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.TownAreaHectares})" /> Hectares
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Minimum Area of Supporting Farmland
+          <div class="col-md-4">
+            <div class="text-right">Minimum Area of Supporting Farmland</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.FarmlandHectares" /> Hectares
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.FarmlandHectares})" /> Hectares
           </div>
         </div>
         <!--- --->
@@ -203,41 +203,41 @@
         </h6>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Approximate Map Dimensions
+          <div class="col-md-4">
+            <div class="text-right">Approximate Town Radius</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.MapHeightMetres" /> Metres x <br />
-            <s:property value="ThisTownData.MapWidthMetres" /> Metres
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.TownRadiusMetres})" /> Metres
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Approximate Town Radius
+          <div class="col-md-4">
+            <div class="text-right">"Old Town"</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.TownRadiusMetres" /> Metres
+            ~<s:property value="getText('{0,number,#,##0}',{ThisTownData.WallOldTownRadiusMetres})" /> Metre Radius, <br />
+            ~<s:property value="getText('{0,number,#,##0}',{ThisTownData.OldTownBuildingCount})" /> buildings
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            "Old Town"
+          <div class="col-md-4">
+            <div class="text-right">"New Town"</div>
           </div>
           <div class="col-md-2">
-            ~<s:property value="ThisTownData.WallOldTownRadiusMetres" /> Metre Radius, <br />
-            ~<s:property value="ThisTownData.OldTownBuildingCount" /> buildings
+            ~<s:property value="getText('{0,number,#,##0}',{ThisTownData.WallNewTownRadiusMetres})" /> Metre Radius, <br />
+            ~<s:property value="getText('{0,number,#,##0}',{ThisTownData.NewTownBuildingCount})" /> buildings
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            "New Town"
+          <div class="col-md-4">
+            <div class="text-right">Approximate Map Dimensions</div>
           </div>
           <div class="col-md-2">
-            ~<s:property value="ThisTownData.WallNewTownRadiusMetres" /> Metre Radius, <br />
-            ~<s:property value="ThisTownData.NewTownBuildingCount" /> buildings
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.MapHeightMetres})" /> Metres x <br />
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.MapWidthMetres})" /> Metres
           </div>
         </div>
         <!--- --->
@@ -247,20 +247,20 @@
         </h6>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Volunteer Militia and / or Professional Soldiers
+          <div class="col-md-4">
+            <div class="text-right">Volunteer Militia and / or <br /> Professional Soldiers</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.TownMilitiaHeadCount" /> people
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.TownMilitiaHeadCount})" /> people
           </div>
         </div>
         <!--- --->
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            Volunteer Constables and / or Professional Guards
+          <div class="col-md-4">
+            <div class="text-right">Volunteer Constables and / or <br /> Professional Guards</div>
           </div>
           <div class="col-md-2">
-            <s:property value="ThisTownData.TownGuardHeadCount" /> people
+            <s:property value="getText('{0,number,#,##0}',{ThisTownData.TownGuardHeadCount})" /> people
           </div>
         </div>
         <!--- --->

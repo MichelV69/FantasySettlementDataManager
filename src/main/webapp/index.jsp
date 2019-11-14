@@ -6,7 +6,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Fantasy Settlement Data Manager</title>
+    <title> <s:text name="app.title.long" /> </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,37 +17,37 @@
           crossorigin="anonymous">
   </head>
   <body>
-    <h1>Welcome To FSDM</h1>
+    <h1>Welcome To <s:text name="app.title.short" /></h1>
 
     <div class="container">
 
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Core Settlement Data</h4>
-          <h5 class="card-subtitle mb-2 text-muted"> Please fill in the form below. </h5>
+          <h4 class="card-title"><s:text name="index.card.title" /></h4>
+          <h5 class="card-subtitle mb-2 text-muted"> <s:text name="index.card.subtitle" /> </h5>
           <s:form action="RenderTown" class="ThisTownData" theme = "bootstrap">
           <!--- --->
           <div class="row justify-content-center">
             <div class="col-md-3">
-              <s:textfield name="NationName" label="Nation Name" />
+              <s:textfield name="NationName" key="NationName.label" />
             </div>
             <div class="col-md-3">
-              <s:textfield name="SettlementName" label="Settlement Name" />
-            </div>
-          </div>
-          <!--- --->
-          <div class="row justify-content-center">
-            <div class="col-md-3">
-              <s:textfield name="AveragePopulation" label="Current Average Annual Population" />
-            </div>
-            <div class="col-md-3">
-              <s:textfield name="SeasonalEconomicStatus" label="Economic Status for this Season" />
+              <s:textfield name="SettlementName" key="SettlementName.label" />
             </div>
           </div>
           <!--- --->
           <div class="row justify-content-center">
             <div class="col-md-3">
-              <s:textfield name="CurrentTaxPercent" label="Current Tax Rate (Percent)" />
+              <s:textfield name="AveragePopulation" key="AveragePopulation.label" />
+            </div>
+            <div class="col-md-3">
+              <s:textfield name="SeasonalEconomicStatus" key="SeasonalEconomicStatus.label" />
+            </div>
+          </div>
+          <!--- --->
+          <div class="row justify-content-center">
+            <div class="col-md-3">
+              <s:textfield name="CurrentTaxPercent" key="CurrentTaxPercent.label" />
             </div>
             <div class="col-md-3">
               <s:submit value="Submit" cssClass = "btn btn-primary" cssRole = "button" />
