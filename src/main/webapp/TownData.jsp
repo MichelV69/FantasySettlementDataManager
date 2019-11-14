@@ -22,7 +22,12 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Settlement Info</h4>
-        <h5 class="card-subtitle mb-2 text-muted"><s:property value="ThisTownData.SettlementName" />, <s:property value="ThisTownData.NationName" /></h5>
+        <h5 class="card-subtitle mb-2 text-muted">
+          <s:property value="ThisTownData.SettlementName" />
+          <s:if test="ThisTownData.NationName != null && ThisTownData.NationName != ''">
+            , <s:property value="ThisTownData.NationName" />
+          </s:if>
+        </h5>
         <!--- --->
         <div class="row justify-content-center">
           <div class="col-md-3">
