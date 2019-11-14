@@ -5,7 +5,7 @@
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <html>
   <head>
-    <title>Fantasy Settlement Data Manager</title>
+    <title>Fantasy Settlement Data Manager (<s:property value="ThisTownData.SettlementName" />)</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +18,6 @@
   <body>
 
   <div class="container">
-
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Settlement Info</h4>
@@ -269,7 +268,7 @@
     </div>
 
   <s:url action="index" var="indexURL" />
-  <s:a href="%{indexURL}" cssClass = "btn btn-secondary" cssRole = "button" > New Settlement </s:a>
+  <s:a href="%{indexURL}" cssClass = "btn btn-secondary float-right" cssRole = "button" > New Settlement </s:a>
 
   </div>
   <!-- Optional JavaScript -->
