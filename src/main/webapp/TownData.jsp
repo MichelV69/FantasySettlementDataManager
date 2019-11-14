@@ -42,7 +42,7 @@
             <div class="text-right"><s:text name="SeasonalEconomicStatus.label" /></div>
           </div>
           <div class="col-md-2">
-            <s:property value="getText('{0,number,#,##0}',{ThisTownData.SeasonalEconomicStatusText})" />
+            <s:property value="ThisTownData.SeasonalEconomicStatusText" />
           </div>
         </div>
         <!--- --->
